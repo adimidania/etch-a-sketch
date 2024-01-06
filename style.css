@@ -36,15 +36,22 @@ main {
 #container {
     background-color: antiquewhite;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;  
     width: 400px;
-    height: 400px ;
+    height: 400px;
 }
 
 
 #container div {
-    width: auto;
-    height: auto;
-    border: 1px solid #000;
-    flex: 0 0 calc(100% / 16);
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+#container div div {
+    flex-grow: 1;
+    border: 1px solid black;
 }
