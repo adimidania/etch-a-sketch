@@ -5,3 +5,7 @@ for(i=0; i<16*16; i++) {
     container.appendChild(element)
 }
 
+const elements = document.querySelectorAll('#container div')
+elements.forEach(element => element.addEventListener('mouseover', function(e) {
+    element.style.backgroundColor = 'black'
+}))
