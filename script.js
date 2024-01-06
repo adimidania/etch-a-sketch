@@ -9,7 +9,8 @@ function randomizeColor() {
 
 let container = document.querySelector('#container');
 const main = document.querySelector('main');
-let theme = 'black'
+let currentColor = '#333333'
+let theme = 'color'
 
 for(i=0; i<16; i++) {
     const row = document.createElement('div');
@@ -22,8 +23,8 @@ for(i=0; i<16; i++) {
 
 let elements = document.querySelectorAll('#container div div');
 elements.forEach(element => element.addEventListener('click', function(e) {
-    if (theme == 'black') {
-        element.style.backgroundColor = 'black';
+    if (theme == 'color') {
+        element.style.backgroundColor = currentColor;
     }
     else if (theme == 'rainbow') {
         element.style.backgroundColor = randomizeColor();
@@ -36,6 +37,7 @@ const reset = document.querySelector('#reset');
 const resize = document.querySelector('#resize');
 const rainbow = document.querySelector('#rainbow');
 const erase = document.querySelector('#erase');
+const colorInput = document.querySelector('#color-input');
 
 reset.addEventListener('click', function(e) {
     elements.forEach(element => element.style.backgroundColor = 'transparent');
@@ -66,8 +68,8 @@ resize.addEventListener('click', function(e) {
     main.appendChild(container);
     elements = container.querySelectorAll('#container div div');
     elements.forEach(element => element.addEventListener('click', function(e) {
-        if (theme == 'black') {
-            element.style.backgroundColor = 'black';
+        if (theme == 'color') {
+            element.style.backgroundColor = currentColor;
         }
         else if (theme == 'rainbow') {
             element.style.backgroundColor = randomizeColor();
@@ -83,5 +85,9 @@ rainbow.addEventListener('click', function(e) {
 
 erase.addEventListener('click', function(e) {
     theme = 'erase';
+})
+
+colorInput.addEventListener('input', function(e) {
+    currentColor = e.target.value;
 })
 
