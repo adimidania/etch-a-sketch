@@ -54,4 +54,5 @@ main {
 #container div div {
     flex-grow: 1;
     border: 1px solid black;
+    cursor: crosshair;
 }
