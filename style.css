@@ -1,7 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Single Day', cursive;
+}
+
+:root {
+    --background-color: #e9edc9;
+    --grid-background-color: #FAFDDE;
+    --border-color: #838871;
+    --heading-color: #838871;
+    --text-color: #262724;
+    --heading-title: 45px;
+    --regular-text: 15px;
 }
 
 body {
@@ -10,7 +23,8 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;  
-    gap: 50px;
+    gap: 35px;
+    background-color: var(--background-color);
 }
 
 main {
@@ -21,28 +35,57 @@ main {
     gap: 25px;
 }
 
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: var(--heading-title);
+    color: var(--heading-color);
+}
+
+header p {
+    font-size: var(--regular-text);
+    color: var(--text-color);
+}
+
 #buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;  
-    gap: 5px;
-}
-
-#buttons button {
+    gap: 7.5px;
     width: 75px;
 }
 
+#buttons button, #buttons input {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+}
+
+#buttons button {
+    background-color: var(--border-color);
+    color: white;
+    padding: 2px;
+    font-size: var(--regular-text);
+}
+
+#buttons input {
+    background-color: transparent;
+}
+
+
 #container {
-    background-color: antiquewhite;
+    background-color: var(--grid-background-color);
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: stretch;  
     width: 400px;
     height: 400px;
+    border: 1px solid var(--border-color);
 }
-
 
 #container div {
     width: 100%;
@@ -53,6 +96,6 @@ main {
 
 #container div div {
     flex-grow: 1;
-    border: 1px solid black;
+    border: 0.1px solid var(--border-color);
     cursor: crosshair;
 }
