@@ -21,18 +21,21 @@ for(i=0; i<16; i++) {
 }
 
 let elements = document.querySelectorAll('#container div div');
-elements.forEach(element => element.addEventListener('mouseover', function(e) {
+elements.forEach(element => element.addEventListener('click', function(e) {
     if (theme == 'black') {
         element.style.backgroundColor = 'black';
     }
     else if (theme == 'rainbow') {
         element.style.backgroundColor = randomizeColor();
-    } 
+    } else if (theme == 'erase') {
+        element.style.backgroundColor = 'transparent';
+    }
 }))
 
 const reset = document.querySelector('#reset');
 const resize = document.querySelector('#resize');
 const rainbow = document.querySelector('#rainbow');
+const erase = document.querySelector('#erase');
 
 reset.addEventListener('click', function(e) {
     elements.forEach(element => element.style.backgroundColor = 'transparent');
@@ -62,17 +65,23 @@ resize.addEventListener('click', function(e) {
     }
     main.appendChild(container);
     elements = container.querySelectorAll('#container div div');
-    elements.forEach(element => element.addEventListener('mouseover', function(e) {
+    elements.forEach(element => element.addEventListener('click', function(e) {
         if (theme == 'black') {
             element.style.backgroundColor = 'black';
         }
         else if (theme == 'rainbow') {
             element.style.backgroundColor = randomizeColor();
-        } 
+        } else if (theme == 'erase') {
+            element.style.backgroundColor = 'transparent';
+        }
     }))
 })
 
 rainbow.addEventListener('click', function(e) {
     theme = 'rainbow';
+})
+
+erase.addEventListener('click', function(e) {
+    theme = 'erase';
 })
 
